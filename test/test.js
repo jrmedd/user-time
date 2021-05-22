@@ -1,5 +1,5 @@
 const assert = require('assert');
-const parseTime = require('../index');
+const parseTime = require('../lib/parseTime');
 
 describe('parseTime', () => {
   it('Single or double-digits less than 12 return time in am by default', () => {

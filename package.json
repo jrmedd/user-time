@@ -4,6 +4,7 @@
   "description": "Zero-dependency function that turns user-input time strings into a formatted time string",
   "main": "index.js",
   "scripts": {
+    "build": "babel src -d lib",
     "test": "mocha"
   },
   "repository": {
@@ -27,6 +28,9 @@
   },
   "homepage": "https://github.com/jrmedd/user-time#readme",
   "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
     "eslint": "^7.27.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.3",
