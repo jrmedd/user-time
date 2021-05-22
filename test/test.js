@@ -123,4 +123,7 @@ describe('parseTime', () => {
   it('ISO strings are always returned, the date of which can be set with an optional paramter', () => {
     assert.strictEqual(parseTime('3:00am', { defaultDate: new Date(2021, 0, 1) }).ISOString, '2021-01-01T03:00:00.000Z');
   });
+  it("BONUS: you can type digit o'clock and get a time value", () => {
+    assert.strictEqual(parseTime("3 o'clock").formattedTime, '3:00 am');
+  });
 });
