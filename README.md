@@ -1,5 +1,6 @@
-# User time
+![build](https://github.com/jrmedd/user-time/actions/workflows/main.yml/badge.svg)
 
+# User time
 Takes user-input time values and parses them, outputting Intl-formatted strings and ISO timestamps.
 
 ## Overview
