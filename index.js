@@ -1,12 +1,13 @@
 const parseTime = (
   timeString,
   {
+    defaultDate = new Date(),
     defaultTimeOfDay = 'am',
     timeFormat = { minute: 'numeric', hour: 'numeric', hourCycle: 'h12' },
   } = {},
 ) => {
   if (typeof timeString !== 'string') throw new Error('Strings only');
-  const date = new Date();
+  const date = defaultDate;
   // eslint-disable-next-line no-nested-ternary
   const time = (timeString.match(/\d+/) !== null
     ? timeString.length === 3
@@ -23,7 +24,7 @@ const parseTime = (
   date.setHours(time[0]);
   date.setMinutes(time[1] ?? 0);
   date.setSeconds(time[2] ?? 0);
-  if (time[0] < 12) {
+  if (time[0] <= 12) {
     const letters = timeString.match(/[a-zA-Z]{1,2}/) ?? [];
     const timeOfDay = letters.length > 0 ? letters[0].toLowerCase() : defaultTimeOfDay;
     switch (timeOfDay) {
@@ -36,7 +37,7 @@ const parseTime = (
     }
   }
   return ({
-    isoString: date.toISOString(),
+    ISOString: date.toISOString(),
     formattedTime: new Intl.DateTimeFormat('en-GB', timeFormat).format(date),
   });
 };
