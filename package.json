@@ -1,0 +1,14 @@
+{
+  "name": "user-time",
+  "version": "1.0.0",
+  "description": "Turns user-input time strings into a formatted time string",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "jrmedd",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^8.4.0"
+  }
+}
