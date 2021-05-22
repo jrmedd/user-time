@@ -10,6 +10,4 @@ My favourite time input on the web is [Google's calendar](https://calendar.googl
 
 ## Examples
 
-```
-[require:parseTime]
-```
+See [the tests for now](https://github.com/jrmedd/user-time/blob/master/test/test.js)., I'll write some proper docs soon
