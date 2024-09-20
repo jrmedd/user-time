@@ -1,13 +1,27 @@
 {
   "name": "user-time",
   "version": "1.0.6",
-  "description": "Zero-dependency function that turns user-input time strings into a formatted time string",
-  "main": "index.js",
+  "description": "Turns fuzzy user time strings into a formatted time string",
+  "main": "./lib/userTime.cjs",
+  "module": "./lib/userTime.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/userTime.d.ts",
+        "default": "./lib/userTime.js"
+      },
+      "require": {
+        "types": "./lib/userTime.d.cts",
+        "default": "./lib/userTime.cjs"
+      }
+    }
+  },
   "files": [
     "lib"
   ],
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "tsup src/userTime.ts --clean --dts --out-dir lib/ --format cjs,esm && fix-tsup-cjs --cwd lib",
     "test": "mocha"
   },
   "repository": {
@@ -31,13 +45,15 @@
   },
   "homepage": "https://github.com/jrmedd/user-time#readme",
   "devDependencies": {
-    "@babel/cli": "^7.14.3",
-    "@babel/core": "^7.14.3",
-    "@babel/preset-env": "^7.14.2",
-    "babel-preset-minify": "^0.5.2",
+    "chai": "^5.1.1",
     "eslint": "^7.27.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.23.3",
-    "mocha": "^8.4.0"
+    "fix-tsup-cjs": "^1.2.0",
+    "mocha": "^8.4.0",
+    "prettier": "^3.3.3",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "fix": "^0.0.6"
   }
 }
