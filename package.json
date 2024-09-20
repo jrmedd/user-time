@@ -1,6 +1,6 @@
 {
   "name": "user-time",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "description": "Turns fuzzy user time strings into a formatted time string",
   "main": "./lib/userTime.cjs",
   "module": "./lib/userTime.js",
